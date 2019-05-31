@@ -9,3 +9,6 @@ VALUES ('UY','URUGUAY', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), 1);
 
 INSERT INTO country (iso_code, name, creation_timestamp, modification_timestamp, version_number) 
 VALUES ('CH','CHILE', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), 1);
+
+INSERT INTO account (creation_timestamp, modification_timestamp, version_number, account_number, currency,saldo) 
+VALUES (CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), 1,123,'peso',100.25);

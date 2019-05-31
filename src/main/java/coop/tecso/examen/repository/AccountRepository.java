@@ -6,4 +6,5 @@ import coop.tecso.examen.model.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
+	Long deleteByAccountNumber(Long accountNumber);
 }
