@@ -1,0 +1,54 @@
+package coop.tecso.examen.model;
+
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Account extends AbstractPersistentObject {
+
+	private static final long serialVersionUID = -8901155893511467206L;
+	
+	
+	private Long accountNumber;
+	private String currency;
+	private Double saldo;
+	
+	@OneToMany(mappedBy="account")
+    private Set<Movement> movements;
+	
+	public Long getAccountNumber() {
+		return accountNumber;
+	}
+	
+	public void setAccountNumber(Long accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	
+	public String getCurrency() {
+		return currency;
+	}
+	
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	
+	public Double getSaldo() {
+		return saldo;
+	}
+	
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+
+	public Set<Movement> getMovements() {
+		return movements;
+	}
+
+	public void setMovements(Set<Movement> movements) {
+		this.movements = movements;
+	}
+	
+	
+}

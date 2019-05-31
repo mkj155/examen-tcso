@@ -1,0 +1,49 @@
+package coop.tecso.examen.model;
+
+import java.sql.Timestamp;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Movement extends AbstractPersistentObject {
+
+	private static final long serialVersionUID = -8901155893511467206L;
+	
+	private Timestamp date;
+	private String movementType;
+	private String description;
+	private Double amount;
+	
+	public Timestamp getDate() {
+		return date;
+	}
+	
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
+	
+	public String getMovementType() {
+		return movementType;
+	}
+	
+	public void setMovementType(String movementType) {
+		this.movementType = movementType;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public Double getAmount() {
+		return amount;
+	}
+	
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+	
+}

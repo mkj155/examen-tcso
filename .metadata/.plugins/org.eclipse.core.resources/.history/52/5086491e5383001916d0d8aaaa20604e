@@ -1,0 +1,63 @@
+package coop.tecso.examen.model;
+
+import java.sql.Timestamp;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class Movement extends AbstractPersistentObject {
+
+	private static final long serialVersionUID = -8901155893511467206L;
+	
+	private Timestamp date;
+	private String movementType;
+	private String description;
+	private Double amount;
+	
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "post_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private Account account;
+	
+	public Timestamp getDate() {
+		return date;
+	}
+	
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
+	
+	public String getMovementType() {
+		return movementType;
+	}
+	
+	public void setMovementType(String movementType) {
+		this.movementType = movementType;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public Double getAmount() {
+		return amount;
+	}
+	
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+	
+}
